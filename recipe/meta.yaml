@@ -1,5 +1,5 @@
 {% set name = "factor-analyzer" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/factor_analyzer-{{ version }}.tar.gz
-  sha256: 56a9a48df9b31918ae8164d1a61c6a12c969f1c89c00a877e53e63fd1c595313
+  sha256: 03703cd128ee9f91c9bd191a452b06e4a28296b5a24d11823ebb5d8250e8fdf6
 
 build:
   number: 0
