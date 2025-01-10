@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/factor_analyzer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/factor_analyzer-{{ version }}.tar.gz
   sha256: 03703cd128ee9f91c9bd191a452b06e4a28296b5a24d11823ebb5d8250e8fdf6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - pandas
     - pre-commit
-    - python
+    - python >={{ python_min }}
     - scikit-learn
     - scipy
 
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/EducationalTestingService/factor_analyzer
